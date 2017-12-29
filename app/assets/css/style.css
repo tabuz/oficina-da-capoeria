@@ -5955,7 +5955,11 @@ body, html {
   100% {
     filter: blur(0px); } }
 
-@keyframes fadeIn {
+.fade-in-anim {
+  animation: fade-in 5s 1;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+@keyframes fade-in {
   0% {
     opacity: 0; }
   100% {
@@ -6035,9 +6039,14 @@ html {
   max-width: 1900px;
   height: 100%; }
 
-.wrapper {
-  position: relative;
-  z-index: 100; }
+.center-wrapper {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
 
 .row-equal-height {
   display: -ms-flexbox;
@@ -6182,3 +6191,46 @@ h1, h2, h3, h4, h5, h6, span, p {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+body {
+  background-color: #000000; }
+
+.jqvmap-label {
+  position: absolute;
+  display: none;
+  border-radius: 3px;
+  background: #292929;
+  color: white;
+  font-family: sans-serif, Verdana;
+  font-size: smaller;
+  padding: 3px;
+  pointer-events: none; }
+
+.jqvmap-pin {
+  pointer-events: none; }
+
+.jqvmap-zoomin, .jqvmap-zoomout {
+  position: absolute;
+  left: 10px;
+  border-radius: 3px;
+  background: #000000;
+  padding: 3px;
+  color: white;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center; }
+
+.jqvmap-zoomin {
+  top: 10px; }
+
+.jqvmap-zoomout {
+  top: 30px; }
+
+.jqvmap-region {
+  cursor: pointer; }
+
+.jqvmap-ajax_response {
+  width: 100%;
+  height: 500px; }

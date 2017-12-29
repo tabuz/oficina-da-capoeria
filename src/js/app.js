@@ -6,7 +6,7 @@ import {
 } from './component_helpers.js';
 import {create_router} from './routing.js';
 
-import './components/page_components/test/test.js';
+import './components/page_components/enter/enter.js';
 
 export let router;
 
@@ -28,6 +28,14 @@ window.create_app = () => {
         components,
         data() {},
         computed: {},
+        oninit() {
+            this.set({
+                colors: {
+                    yellow: '#f9d50d',
+                    green: '#12813f',
+                }
+            })
+        },
         current_page() {
             return this.findComponent(this.get('current_page'));
         },
@@ -67,4 +75,5 @@ window.create_app = () => {
 
     router = create_router(app);
     app.router = router;
+    app.show_page('enter');
 };

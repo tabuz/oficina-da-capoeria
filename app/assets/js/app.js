@@ -80,6 +80,14 @@
 	        data: function data() {},
 
 	        computed: {},
+	        oninit: function oninit() {
+	            this.set({
+	                colors: {
+	                    yellow: '#f9d50d',
+	                    green: '#12813f'
+	                }
+	            });
+	        },
 	        current_page: function current_page() {
 	            return this.findComponent(this.get('current_page'));
 	        },
@@ -120,6 +128,7 @@
 
 	    exports.router = router = (0, _routing.create_router)(app);
 	    app.router = router;
+	    app.show_page('enter');
 	};
 
 /***/ }),
@@ -246,17 +255,34 @@
 
 	var _component_helpers = __webpack_require__(2);
 
-	var _testRactive = __webpack_require__(6);
+	var _enterRactive = __webpack_require__(6);
 
-	var _testRactive2 = _interopRequireDefault(_testRactive);
+	var _enterRactive2 = _interopRequireDefault(_enterRactive);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _component_helpers.create_component)('test', {
-	    template: _testRactive2.default,
+	(0, _component_helpers.create_component)('enter', {
+	    template: _enterRactive2.default,
 	    oninit: function oninit() {
-	        this.set('test', 'dziala');
-	        this.set('template', _testRactive2.default);
+	        this.set('loading', true);
+	    },
+	    oncomplete: function oncomplete() {
+	        var _this = this;
+
+	        setTimeout(function () {
+	            _this.set('loading', false);
+	            jQuery('#vmap').vectorMap({
+	                map: 'world_en',
+	                backgroundColor: null,
+	                color: app.get('colors.yellow'),
+	                hoverOpacity: 0.7,
+	                selectedColor: app.get('colors.green'),
+	                enableZoom: false,
+	                showTooltip: true,
+	                scaleColors: ['#C8EEFF', '#006491'],
+	                normalizeFunction: 'polynomial'
+	            });
+	        }, 5000);
 	    }
 	});
 
@@ -264,7 +290,7 @@
 /* 6 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"main","f":[{"t":7,"e":"div","a":{"class":"secondary-bg"}}," ",{"t":7,"e":"h1","f":["Test!"]}]}]};
+	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"vh-height enter"},"f":[{"t":7,"e":"div","a":{"class":"center-wrapper"},"f":[{"t":4,"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow.png","alt":"Oficina Da Capoeria International - Logo","class":"fade-in-anim","style":"height: 500px; width: auto;"}}],"n":50,"r":"loading"}," ",{"t":7,"e":"div","a":{"id":"vmap"},"m":[{"t":4,"f":["class=\"fade-in-anim\" style=\"width: 1000px; height: 800px;\""],"n":50,"x":{"r":["loading"],"s":"!_0"}}]}]}]}]};
 
 /***/ })
 /******/ ]);

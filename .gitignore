@@ -23,6 +23,8 @@ src/components
 
 ## Sass
 .sass-cache
+src/scss
+!src/scss/components/*.scss
 
 ## OS X
 .DS_Store
