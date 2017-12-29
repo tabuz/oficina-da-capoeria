@@ -7,6 +7,8 @@ import {
 import {create_router} from './routing.js';
 
 import './components/page_components/enter/enter.js';
+import './components/page_components/navigation/navigation.js';
+import './components/page_components/home/home.js';
 
 export let router;
 
@@ -22,20 +24,22 @@ window.create_app = () => {
         template: `
             ${partials()}
             {{#if current_page}}
+                {{#if current_page !== 'enter'}}
+                    <navigation/>
+                {{/if}}
                 {{>.current_page}}
             {{/if}}
         `,
         components,
-        data() {},
-        computed: {},
-        oninit() {
-            this.set({
+        data() {
+            return {
                 colors: {
                     yellow: '#f9d50d',
                     green: '#12813f',
                 }
-            })
+            }
         },
+        computed: {},
         current_page() {
             return this.findComponent(this.get('current_page'));
         },
@@ -75,5 +79,5 @@ window.create_app = () => {
 
     router = create_router(app);
     app.router = router;
-    app.show_page('enter');
+    app.show_page('home');
 };

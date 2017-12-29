@@ -64,6 +64,10 @@
 
 	__webpack_require__(5);
 
+	__webpack_require__(7);
+
+	__webpack_require__(9);
+
 	var router = exports.router = void 0;
 
 	var app_initial_data = {
@@ -75,19 +79,18 @@
 	window.create_app = function () {
 
 	    var app = new _component_helpers.BaseComponent({
-	        template: '\n            ' + (0, _component_helpers.partials)() + '\n            {{#if current_page}}\n                {{>.current_page}}\n            {{/if}}\n        ',
+	        template: '\n            ' + (0, _component_helpers.partials)() + '\n            {{#if current_page}}\n                {{#if current_page !== \'enter\'}}\n                    <navigation/>\n                {{/if}}\n                {{>.current_page}}\n            {{/if}}\n        ',
 	        components: _component_helpers.components,
-	        data: function data() {},
-
-	        computed: {},
-	        oninit: function oninit() {
-	            this.set({
+	        data: function data() {
+	            return {
 	                colors: {
 	                    yellow: '#f9d50d',
 	                    green: '#12813f'
 	                }
-	            });
+	            };
 	        },
+
+	        computed: {},
 	        current_page: function current_page() {
 	            return this.findComponent(this.get('current_page'));
 	        },
@@ -128,7 +131,7 @@
 
 	    exports.router = router = (0, _routing.create_router)(app);
 	    app.router = router;
-	    app.show_page('enter');
+	    app.show_page('home');
 	};
 
 /***/ }),
@@ -262,35 +265,112 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _component_helpers.create_component)('enter', {
-	    template: _enterRactive2.default,
-	    oninit: function oninit() {
-	        this.set('loading', true);
-	    },
-	    oncomplete: function oncomplete() {
-	        var _this = this;
+					template: _enterRactive2.default,
+					oninit: function oninit() {
+									this.set('loading', true);
+					},
+					oncomplete: function oncomplete() {
+									var _this = this;
 
-	        setTimeout(function () {
-	            _this.set('loading', false);
-	            jQuery('#vmap').vectorMap({
-	                map: 'world_en',
-	                backgroundColor: null,
-	                color: app.get('colors.yellow'),
-	                hoverOpacity: 0.7,
-	                selectedColor: app.get('colors.green'),
-	                enableZoom: false,
-	                showTooltip: true,
-	                scaleColors: ['#C8EEFF', '#006491'],
-	                normalizeFunction: 'polynomial'
-	            });
-	        }, 5000);
-	    }
+									setTimeout(function () {
+													_this.set('loading', false);
+													setTimeout(function () {
+																	jQuery('#vmap').vectorMap({
+																					map: 'world_en',
+																					backgroundColor: null,
+																					color: app.get('colors.yellow'),
+																					hoverOpacity: 0.7,
+																					selectedColor: app.get('colors.green'),
+																					enableZoom: false,
+																					showTooltip: false,
+																					scaleColors: ['#C8EEFF', '#006491'],
+																					normalizeFunction: 'polynomial',
+																					onRegionClick: function onRegionClick(element, code, region) {
+																									var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
+
+																									console.log(message);
+																									app.show_page('home');
+																					}
+																	});
+													}, 100);
+									}, 3000);
+					}
 	});
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"vh-height enter"},"f":[{"t":7,"e":"div","a":{"class":"center-wrapper"},"f":[{"t":4,"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow.png","alt":"Oficina Da Capoeria International - Logo","class":"fade-in-anim","style":"height: 500px; width: auto;"}}],"n":50,"r":"loading"}," ",{"t":7,"e":"div","a":{"id":"vmap"},"m":[{"t":4,"f":["class=\"fade-in-anim\" style=\"width: 1000px; height: 800px;\""],"n":50,"x":{"r":["loading"],"s":"!_0"}}]}]}]}]};
+	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"enter"},"f":[{"t":7,"e":"div","a":{"class":"center-wrapper"},"f":[{"t":4,"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow.png","alt":"Oficina Da Capoeria International - Logo","class":"fade-in-slow","style":"height: 500px; width: auto;"}}],"n":50,"r":"loading"}," ",{"t":7,"e":"div","a":{"id":"vmap"},"m":[{"t":4,"f":["class=\"fade-in-slow\" style=\"width: 1000px; height: 800px;\""],"n":50,"x":{"r":["loading"],"s":"!_0"}}]}]}]}]};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _component_helpers = __webpack_require__(2);
+
+	var _navigationRactive = __webpack_require__(8);
+
+	var _navigationRactive2 = _interopRequireDefault(_navigationRactive);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _component_helpers.create_component)('navigation', {
+	    template: _navigationRactive2.default,
+	    oninit: function oninit() {},
+	    oncomplete: function oncomplete() {}
+	});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"navbar-fixed"},"f":[{"t":7,"e":"nav","f":[{"t":7,"e":"div","a":{"class":"nav-wrapper"},"f":[{"t":7,"e":"a","a":{"href":"#","class":"brand-logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow_small.png","alt":"Oficina Da Capoeira Logo"}}]}," ",{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"right hide-on-med-and-down"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["School"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Videos"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Prices"]}]}]}]}]}]}]};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _component_helpers = __webpack_require__(2);
+
+	var _homeRactive = __webpack_require__(10);
+
+	var _homeRactive2 = _interopRequireDefault(_homeRactive);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _component_helpers.create_component)('home', {
+	    template: _homeRactive2.default,
+	    oninit: function oninit() {},
+	    oncomplete: function oncomplete() {
+	        function format_strings(strings) {
+	            var prefix = 'THIS IS<span class="text-actent">';
+	            var appendix = '</span>';
+	            var new_strings = [];
+
+	            strings.forEach(function (string) {
+	                new_strings[string] = '' + prefix + string + appendix;
+	            });
+	            return new_strings;
+	        }
+	        console.log(format_strings(['WHAT WE LIVE', 'WHO WE ARE', 'CAPOEIRA']));
+	        var options = {
+	            strings: format_strings(['WHAT WE LIVE', 'WHO WE ARE', 'CAPOEIRA']),
+	            typeSpeed: 60
+	        };
+	        var typed = new Typed(".typed-input", options);
+	    }
+	});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"home fade-in-fast"},"f":[{"t":7,"e":"div","a":{"class":"carousel --bg"}}," ",{"t":7,"e":"div","a":{"class":"carousel --content"},"f":[{"t":7,"e":"div","a":{"class":""},"f":[{"t":7,"e":"h1","f":[{"t":7,"e":"span","a":{"class":"typed-input"}}]}]}]}]}]};
 
 /***/ })
 /******/ ]);
