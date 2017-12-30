@@ -348,18 +348,17 @@
 	    oninit: function oninit() {},
 	    oncomplete: function oncomplete() {
 	        function format_strings(strings) {
-	            var prefix = 'THIS IS<span class="text-actent">';
+	            var prefix = 'THIS IS <span class="text-actent">';
 	            var appendix = '</span>';
 	            var new_strings = [];
 
-	            strings.forEach(function (string) {
-	                new_strings[string] = '' + prefix + string + appendix;
+	            return strings.map(function (string) {
+	                return '' + prefix + string + appendix;
 	            });
-	            return new_strings;
 	        }
 	        console.log(format_strings(['WHAT WE LIVE', 'WHO WE ARE', 'CAPOEIRA']));
 	        var options = {
-	            strings: format_strings(['WHAT WE LIVE', 'WHO WE ARE', 'CAPOEIRA']),
+	            strings: format_strings(['HOW WE LIVE', 'WHO WE ARE', 'CAPOEIRA']),
 	            typeSpeed: 60
 	        };
 	        var typed = new Typed(".typed-input", options);
@@ -370,7 +369,7 @@
 /* 10 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"home fade-in-fast"},"f":[{"t":7,"e":"div","a":{"class":"carousel --bg"}}," ",{"t":7,"e":"div","a":{"class":"carousel --content"},"f":[{"t":7,"e":"div","a":{"class":""},"f":[{"t":7,"e":"h1","f":[{"t":7,"e":"span","a":{"class":"typed-input"}}]}]}]}]}]};
+	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"home fade-in-fast"},"f":[{"t":7,"e":"div","a":{"class":"carousel --bg"}}," ",{"t":7,"e":"div","a":{"class":"carousel --content"},"f":[{"t":7,"e":"h1","a":{"class":"border-thick padding"},"f":[{"t":7,"e":"span","a":{"class":"typed-input"}}]}]}," ",{"t":7,"e":"section","a":{"id":"home"},"f":[{"t":7,"e":"div","a":{"class":"container padding"},"f":[{"t":7,"e":"div","a":{"class":"row green z-depth-5"},"f":[{"t":7,"e":"div","a":{"class":"col s12 padding"},"f":[{"t":7,"e":"div","a":{"class":"card green-darker padding"},"f":[{"t":7,"e":"div","a":{"class":"card-title"},"f":[{"t":7,"e":"h4","f":["Oficina Da Capoeira - Bristol"]}]}," ",{"t":7,"e":"div","a":{"class":"card-content"},"f":[{"t":7,"e":"h5","f":["Working with Graccie Barra hell yeah!"]}]}]}]}]}]}]}]}]};
 
 /***/ })
 /******/ ]);

@@ -7,14 +7,14 @@ create_component('home', {
     },
     oncomplete() {
     	function format_strings (strings) {
-			let prefix = 'THIS IS<span class="text-actent">';
+			let prefix = 'THIS IS <span class="text-actent">';
 	    	let appendix = '</span>';
 	    	let new_strings = [];
 
-    		strings.forEach((string) => {
-    			new_strings[string] = `${prefix}${string}${appendix}`;
+    		return strings.map((string) => {
+    			return `${prefix}${string}${appendix}`;
     		})
-    		return new_strings
+    		
     	}
     	console.log(
     		format_strings([
@@ -24,7 +24,7 @@ create_component('home', {
 		  	]))
     	let options = {
 			strings: format_strings([
-				'WHAT WE LIVE',
+				'HOW WE LIVE',
     			'WHO WE ARE',
     			'CAPOEIRA',
 		  	]),

@@ -5918,7 +5918,7 @@ html {
 
 body {
   font: 300 13px/1.6 Raleway, 'Helvetica Neue', Helvetica, Arial;
-  color: #DDDDDD;
+  color: #FFFFFF;
   transition: all .4s .3s ease-in; }
 
 body, html {
@@ -5982,13 +5982,25 @@ html {
   padding-top: 9rem; }
 
 .primary {
-  color: #DDDDDD; }
+  color: #FFFFFF; }
 
 .secondary {
   color: #000000; }
 
 .secondary-gb {
   background-color: #000000; }
+
+.green {
+  background-color: #12813f !important; }
+
+.green-darker {
+  background-color: #05612a; }
+
+.border-thin {
+  border: 1px solid #12813f; }
+
+.border-thick {
+  border: 5px solid #12813f; }
 
 .vh-height {
   height: 100vh; }
@@ -6036,6 +6048,10 @@ html {
       align-content: center;
   max-width: 1100px;
   margin: 0 auto; }
+
+.container {
+  max-width: 1100px;
+  padding: 1rem; }
 
 .content-wrapper {
   position: relative;
@@ -6127,7 +6143,7 @@ h1, h2, h3, h4, h5, h6, span, p {
   display: inline-block;
   font-size: 1.6rem;
   font-weight: 300;
-  border-bottom: 1px solid #DDDDDD; }
+  border-bottom: 1px solid #FFFFFF; }
   .section-header.alternative-header {
     color: #000000;
     border-bottom: 1px solid #000000; }
@@ -6199,13 +6215,25 @@ h1, h2, h3, h4, h5, h6, span, p {
   h3 {
     page-break-after: avoid; } }
 
+nav {
+  background: radial-gradient(ellipse at center bottom, #f9d50d 0%, #12813f 100%); }
+  nav ul li:last-of-type {
+    margin-right: 1rem; }
+
 .brand-logo {
-  margin-top: 10px;
   position: fixed;
   left: 15%; }
+  .brand-logo img {
+    padding: 6px;
+    background: radial-gradient(ellipse at right bottom, #f9d50d 0%, rgba(18, 129, 63, 0.9) 100%);
+    border-radius: 50%; }
+
+html {
+  overflow: hidden; }
 
 body {
-  background-color: #000000; }
+  background-color: #f9d50d;
+  overflow-y: hidden; }
 
 main {
   height: 100vh;
@@ -6252,16 +6280,26 @@ main {
   height: 500px; }
 
 .home .carousel {
-  height: 35%;
+  height: 100%;
   position: relative;
-  background-size: contain;
-  background-size: 100%;
-  background-position: 0% 50%;
+  background-size: cover;
+  background-position: 50% 50%;
   background-repeat: no-repeat; }
   .home .carousel.--content {
     position: absolute;
     top: 0;
-    width: 100%; }
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+    .home .carousel.--content h1 {
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+      position: absolute;
+      margin: 0 auto; }
   .home .carousel.--bg {
     background-image: url("../img/bg.jpg");
     filter: brightness(15%); }
