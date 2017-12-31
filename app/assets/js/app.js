@@ -68,6 +68,8 @@
 
 	__webpack_require__(9);
 
+	__webpack_require__(11);
+
 	var router = exports.router = void 0;
 
 	var app_initial_data = {
@@ -86,7 +88,8 @@
 	                colors: {
 	                    yellow: '#f9d50d',
 	                    green: '#12813f'
-	                }
+	                },
+	                typing_hero: false
 	            };
 	        },
 
@@ -131,7 +134,7 @@
 
 	    exports.router = router = (0, _routing.create_router)(app);
 	    app.router = router;
-	    app.show_page('home');
+	    app.show_page('enter');
 	};
 
 /***/ }),
@@ -327,7 +330,7 @@
 /* 8 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"navbar-fixed"},"f":[{"t":7,"e":"nav","f":[{"t":7,"e":"div","a":{"class":"nav-wrapper"},"f":[{"t":7,"e":"a","a":{"href":"#","class":"brand-logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow_small.png","alt":"Oficina Da Capoeira Logo"}}]}," ",{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"right hide-on-med-and-down"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["School"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Videos"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Prices"]}]}]}]}]}]}]};
+	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"navbar-fixed fade-in-slow"},"f":[{"t":7,"e":"nav","f":[{"t":7,"e":"div","a":{"class":"nav-wrapper"},"f":[{"t":7,"e":"a","a":{"href":"#","class":"brand-logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow_small.png","alt":"Oficina Da Capoeira Logo"}}]}," ",{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"right hide-on-med-and-down"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["School"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Videos"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Prices"]}]}]}]}]}]}]};
 
 /***/ }),
 /* 9 */
@@ -356,10 +359,17 @@
 	                return '' + prefix + string + appendix;
 	            });
 	        }
-	        console.log(format_strings(['WHAT WE LIVE', 'WHO WE ARE', 'CAPOEIRA']));
 	        var options = {
-	            strings: format_strings(['HOW WE LIVE', 'WHO WE ARE', 'CAPOEIRA']),
-	            typeSpeed: 60
+	            strings: format_strings(['^300 HOW WE LIVE', '^300 WHO WE ARE', '^300 CAPOEIRA']),
+	            typeSpeed: 60,
+	            backSpeed: 40,
+	            backDelay: 750,
+	            contentType: 'html',
+	            onComplete: function onComplete(self) {
+	                setTimeout(function () {
+	                    app.toggle('typing_hero');
+	                }, 1000);
+	            }
 	        };
 	        var typed = new Typed(".typed-input", options);
 	    }
@@ -369,7 +379,42 @@
 /* 10 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"home fade-in-fast"},"f":[{"t":7,"e":"div","a":{"class":"carousel --bg"}}," ",{"t":7,"e":"div","a":{"class":"carousel --content"},"f":[{"t":7,"e":"h1","a":{"class":"border-thick padding"},"f":[{"t":7,"e":"span","a":{"class":"typed-input"}}]}]}," ",{"t":7,"e":"section","a":{"id":"home"},"f":[{"t":7,"e":"div","a":{"class":"container padding"},"f":[{"t":7,"e":"div","a":{"class":"row green z-depth-5"},"f":[{"t":7,"e":"div","a":{"class":"col s12 padding"},"f":[{"t":7,"e":"div","a":{"class":"card green-darker padding"},"f":[{"t":7,"e":"div","a":{"class":"card-title"},"f":[{"t":7,"e":"h4","f":["Oficina Da Capoeira - Bristol"]}]}," ",{"t":7,"e":"div","a":{"class":"card-content"},"f":[{"t":7,"e":"h5","f":["Working with Graccie Barra hell yeah!"]}]}]}]}]}]}]}]}]};
+	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"home fade-in-slow"},"f":[{"t":7,"e":"div","a":{"class":["carousel --bg ",{"t":4,"f":["slide-up"],"n":50,"x":{"r":["app.typing_hero"],"s":"!_0"}}]}}," ",{"t":7,"e":"div","a":{"class":["carousel --content ",{"t":4,"f":["slide-up"],"n":50,"x":{"r":["app.typing_hero"],"s":"!_0"}}]},"f":[{"t":7,"e":"h1","a":{"class":"border-thick padding"},"f":[{"t":7,"e":"span","a":{"class":"typed-input"}}]}]}," ",{"t":7,"e":"section","a":{"id":"home","class":[{"t":4,"f":["slide-up"],"n":50,"x":{"r":["app.typing_hero"],"s":"!_0"}}," padding"]},"f":[{"t":7,"e":"div","a":{"class":"container"},"f":[{"t":7,"e":"div","a":{"class":"row green z-depth-5 padding-big"},"f":[{"t":7,"e":"div","a":{"class":"col s6"},"f":[{"t":7,"e":"div","a":{"class":"card green-darker padding"},"f":[{"t":7,"e":"div","a":{"class":"card-title"},"f":[{"t":7,"e":"h4","f":["Oficina Da Capoeira - Bristol"]}]}," ",{"t":7,"e":"div","a":{"class":"card-content"},"f":[{"t":7,"e":"h5","f":["Working with Graccie Barra hell yeah!"]}]}]}]}," ",{"t":7,"e":"news"}]}]}]}]}]};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _component_helpers = __webpack_require__(2);
+
+	var _newsRactive = __webpack_require__(12);
+
+	var _newsRactive2 = _interopRequireDefault(_newsRactive);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _component_helpers.create_component)('news', {
+					template: _newsRactive2.default,
+					oninit: function oninit() {
+									FB.api("/capoeira.bristol/feed", function (response) {
+													if (response && !response.error) {
+																	console.log(response);
+													}
+													if (response && response.error) {
+																	console.log('error', response);
+													}
+									});
+					},
+					oncomplete: function oncomplete() {}
+	});
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"col s6"},"f":[{"t":7,"e":"div","a":{"class":"card green-darker padding"},"f":[{"t":7,"e":"div","a":{"class":"card-title"},"f":[{"t":7,"e":"h4","f":["News"]}]}," ",{"t":7,"e":"div","a":{"class":"card-content secondary"},"f":[{"t":7,"e":"ul","a":{"class":"collection"},"f":[{"t":7,"e":"li","a":{"class":"collection-item avatar"},"f":[{"t":7,"e":"img","a":{"src":"images/yuna.jpg","alt":"","class":"circle"}}," ",{"t":7,"e":"span","a":{"class":"title"},"f":["Title"]}," ",{"t":7,"e":"p","f":["First Line ",{"t":7,"e":"br"}," Second Line"]}," ",{"t":7,"e":"a","a":{"href":"#!","class":"secondary-content"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["grade"]}]}]}," ",{"t":7,"e":"li","a":{"class":"collection-item avatar"},"f":[{"t":7,"e":"i","a":{"class":"material-icons circle"},"f":["folder"]}," ",{"t":7,"e":"span","a":{"class":"title"},"f":["Title"]}," ",{"t":7,"e":"p","f":["First Line ",{"t":7,"e":"br"}," Second Line"]}," ",{"t":7,"e":"a","a":{"href":"#!","class":"secondary-content"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["grade"]}]}]}," ",{"t":7,"e":"li","a":{"class":"collection-item avatar"},"f":[{"t":7,"e":"i","a":{"class":"material-icons circle green"},"f":["insert_chart"]}," ",{"t":7,"e":"span","a":{"class":"title"},"f":["Title"]}," ",{"t":7,"e":"p","f":["First Line ",{"t":7,"e":"br"}," Second Line"]}," ",{"t":7,"e":"a","a":{"href":"#!","class":"secondary-content"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["grade"]}]}]}," ",{"t":7,"e":"li","a":{"class":"collection-item avatar"},"f":[{"t":7,"e":"i","a":{"class":"material-icons circle red"},"f":["play_arrow"]}," ",{"t":7,"e":"span","a":{"class":"title"},"f":["Title"]}," ",{"t":7,"e":"p","f":["First Line ",{"t":7,"e":"br"}," Second Line"]}," ",{"t":7,"e":"a","a":{"href":"#!","class":"secondary-content"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["grade"]}]}]}]}]}]}]}]};
 
 /***/ })
 /******/ ]);

@@ -1,12 +1,12 @@
-<main class="home fade-in-fast">
-	<div class="carousel --bg"></div>
-	<div class="carousel --content">
+<main class="home fade-in-slow">
+	<div class="carousel --bg {{#if !app.typing_hero}}slide-up{{/if}}"></div>
+	<div class="carousel --content {{#if !app.typing_hero}}slide-up{{/if}}">
 		<h1 class="border-thick padding"><span class="typed-input"></span></h1>
 	</div>
-	<section id="home">
-		<div class="container padding">
-			<div class="row green z-depth-5">
-				<div class="col s12 padding">
+	<section id="home" class="{{#if !app.typing_hero}}slide-up{{/if}} padding">
+		<div class="container">
+			<div class="row green z-depth-5 padding-big">
+				<div class="col s6">
 					<div class="card green-darker padding">
 						<div class="card-title">
 							<h4>Oficina Da Capoeira - Bristol</h4>
@@ -16,6 +16,7 @@
 						</div>
 					</div>
 				</div>
+				<news/>
 			</div>
 		</div>
 	</section>

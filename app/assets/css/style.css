@@ -5969,6 +5969,11 @@ body, html {
   100% {
     opacity: 100%; } }
 
+.slide-up {
+  transition: transform 880ms ease-out;
+  -ms-transform: translateY(-100%);
+      transform: translateY(-100%); }
+
 html {
   overflow-x: hidden; }
 
@@ -6079,6 +6084,12 @@ html {
 
 .padding {
   padding: 1rem !important; }
+
+.padding-big {
+  padding: 1.5rem 1.5rem; }
+
+.padding-huge {
+  padding: 6rem 2.5rem; }
 
 .double-padding {
   padding: 2rem !important; }
@@ -6222,22 +6233,32 @@ nav {
 
 .brand-logo {
   position: fixed;
-  left: 15%; }
+  left: 3%; }
   .brand-logo img {
     padding: 6px;
     background: radial-gradient(ellipse at right bottom, #f9d50d 0%, rgba(18, 129, 63, 0.9) 100%);
     border-radius: 50%; }
 
 html {
-  overflow: hidden; }
+  min-height: 100%vh !important; }
 
 body {
   background-color: #f9d50d;
+  background-repeat: no-repeat;
+  background-image: url("../img/hands-bg.png"), url("../img/jump-bg.png"), url("../img/kick-bg.png");
+  background-position: 15% bottom, 50% bottom, 85% bottom;
   overflow-y: hidden; }
 
 main {
-  height: 100vh;
-  position: relative; }
+  height: 100%;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+section {
+  min-height: 92%; }
 
 .jqvmap-label {
   position: absolute;

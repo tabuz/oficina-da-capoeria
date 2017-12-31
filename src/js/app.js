@@ -9,6 +9,7 @@ import {create_router} from './routing.js';
 import './components/page_components/enter/enter.js';
 import './components/page_components/navigation/navigation.js';
 import './components/page_components/home/home.js';
+import './components/page_components/news/news.js';
 
 export let router;
 
@@ -36,7 +37,8 @@ window.create_app = () => {
                 colors: {
                     yellow: '#f9d50d',
                     green: '#12813f',
-                }
+                },
+                typing_hero: false,
             }
         },
         computed: {},
@@ -79,5 +81,5 @@ window.create_app = () => {
 
     router = create_router(app);
     app.router = router;
-    app.show_page('home');
+    app.show_page('enter');
 };
