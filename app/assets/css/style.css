@@ -6007,6 +6007,9 @@ html {
 .border-thick {
   border: 5px solid #12813f; }
 
+.block {
+  display: block; }
+
 .vh-height {
   height: 100vh; }
 
@@ -6124,6 +6127,9 @@ html {
 .margin-auto {
   margin: 0 auto; }
 
+.margin-top {
+  margin-top: 1rem; }
+
 .text-medium {
   font-size: .9rem; }
 
@@ -6135,6 +6141,9 @@ html {
 
 .text-align-center {
   text-align: center; }
+
+.text-align-right {
+  text-align: right; }
 
 .text-actent {
   color: #f9d50d; }
@@ -6324,3 +6333,9 @@ section {
   .home .carousel.--bg {
     background-image: url("../img/bg.jpg");
     filter: brightness(15%); }
+
+.home .info-background {
+  background-image: url("../img/oficina_photo.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 12rem; }
