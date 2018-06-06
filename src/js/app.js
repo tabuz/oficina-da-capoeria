@@ -6,14 +6,10 @@ import {
 } from './component_helpers.js';
 import {create_router} from './routing.js';
 
-import {config} from './config.js';
-import './components/page_components/enter/enter.js';
-import './components/page_components/navigation/navigation.js';
 import './components/page_components/home/home.js';
-import './components/page_components/news/news.js';
 
 export let router;
-console.log(config, 'yeloo');
+
 const app_initial_data = {
     loading: true,
 };
@@ -39,8 +35,6 @@ window.create_app = () => {
                     yellow: '#f9d50d',
                     green: '#12813f',
                 },
-                typing_hero: false,
-                config: config,
             }
         },
         computed: {},

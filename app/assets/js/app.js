@@ -62,18 +62,10 @@
 
 	var _routing = __webpack_require__(4);
 
-	var _config = __webpack_require__(5);
-
-	__webpack_require__(6);
-
-	__webpack_require__(8);
-
-	__webpack_require__(10);
-
-	__webpack_require__(12);
+	__webpack_require__(5);
 
 	var router = exports.router = void 0;
-	console.log(_config.config, 'yeloo');
+
 	var app_initial_data = {
 	    loading: true
 	};
@@ -90,9 +82,7 @@
 	                colors: {
 	                    yellow: '#f9d50d',
 	                    green: '#12813f'
-	                },
-	                typing_hero: false,
-	                config: _config.config
+	                }
 	            };
 	        },
 
@@ -258,105 +248,13 @@
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var config = exports.config = {
-		FB_SECRET_KEY: "298629627325409|gNvhgQU0jNzHMOdTaN00kf4v7mU"
-	};
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _component_helpers = __webpack_require__(2);
 
-	var _enterRactive = __webpack_require__(7);
-
-	var _enterRactive2 = _interopRequireDefault(_enterRactive);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	(0, _component_helpers.create_component)('enter', {
-					template: _enterRactive2.default,
-					oninit: function oninit() {
-									this.set('loading', true);
-					},
-					oncomplete: function oncomplete() {
-									var _this = this;
-
-									setTimeout(function () {
-													_this.set('loading', false);
-													setTimeout(function () {
-																	jQuery('#vmap').vectorMap({
-																					map: 'world_en',
-																					backgroundColor: null,
-																					color: app.get('colors.yellow'),
-																					hoverOpacity: 0.7,
-																					selectedColor: app.get('colors.green'),
-																					enableZoom: false,
-																					showTooltip: false,
-																					scaleColors: ['#C8EEFF', '#006491'],
-																					normalizeFunction: 'polynomial',
-																					onRegionClick: function onRegionClick(element, code, region) {
-																									var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
-
-																									console.log(message);
-																									app.show_page('home');
-																					}
-																	});
-													}, 100);
-									}, 3000);
-					}
-	});
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"enter"},"f":[{"t":7,"e":"div","a":{"class":"center-wrapper"},"f":[{"t":4,"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow.png","alt":"Oficina Da Capoeria International - Logo","class":"fade-in-slow","style":"height: 500px; width: auto;"}}],"n":50,"r":"loading"}," ",{"t":7,"e":"div","a":{"id":"vmap"},"m":[{"t":4,"f":["class=\"fade-in-slow\" style=\"width: 1000px; height: 800px;\""],"n":50,"x":{"r":["loading"],"s":"!_0"}}]}]}]}]};
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _component_helpers = __webpack_require__(2);
-
-	var _navigationRactive = __webpack_require__(9);
-
-	var _navigationRactive2 = _interopRequireDefault(_navigationRactive);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	(0, _component_helpers.create_component)('navigation', {
-	    template: _navigationRactive2.default,
-	    oninit: function oninit() {},
-	    oncomplete: function oncomplete() {}
-	});
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"navbar-fixed fade-in-slow"},"f":[{"t":7,"e":"nav","f":[{"t":7,"e":"div","a":{"class":"nav-wrapper"},"f":[{"t":7,"e":"a","a":{"href":"#","class":"brand-logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/oficina_white_yellow_small.png","alt":"Oficina Da Capoeira Logo"}}]}," ",{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"right hide-on-med-and-down"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["School"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Videos"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Prices"]}]}]}]}]}]}]};
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _component_helpers = __webpack_require__(2);
-
-	var _homeRactive = __webpack_require__(11);
+	var _homeRactive = __webpack_require__(6);
 
 	var _homeRactive2 = _interopRequireDefault(_homeRactive);
 
@@ -365,74 +263,14 @@
 	(0, _component_helpers.create_component)('home', {
 	    template: _homeRactive2.default,
 	    oninit: function oninit() {},
-	    oncomplete: function oncomplete() {
-	        function format_strings(strings) {
-	            var prefix = 'THIS IS <span class="text-actent">';
-	            var appendix = '</span>';
-	            var new_strings = [];
-
-	            return strings.map(function (string) {
-	                return '' + prefix + string + appendix;
-	            });
-	        }
-	        var options = {
-	            strings: format_strings(['^300 HOW WE LIVE', '^300 WHO WE ARE', '^300 CAPOEIRA']),
-	            typeSpeed: 60,
-	            backSpeed: 40,
-	            backDelay: 750,
-	            contentType: 'html',
-	            onComplete: function onComplete(self) {
-	                setTimeout(function () {
-	                    app.toggle('typing_hero');
-	                }, 1000);
-	            }
-	        };
-	        var typed = new Typed(".typed-input", options);
-	    }
+	    oncomplete: function oncomplete() {}
 	});
 
 /***/ }),
-/* 11 */
+/* 6 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"main","a":{"class":"home fade-in-slow"},"f":[" ",{"t":7,"e":"section","a":{"id":"home","class":[{"t":4,"n":50,"x":{"r":["app.typing_hero"],"s":"!_0"}}," padding"]},"f":[{"t":7,"e":"div","a":{"class":"container"},"f":[{"t":7,"e":"div","a":{"class":"row green z-depth-5 padding-big"},"f":[{"t":7,"e":"div","a":{"class":"col l6 m12 s12"},"f":[{"t":7,"e":"div","a":{"class":"card green-darker padding"},"f":[{"t":7,"e":"div","a":{"class":"card-title margin-bottom"},"f":[{"t":7,"e":"h5","f":["Oficina Da Capoeira - Bristol"]}]}," ",{"t":7,"e":"div","a":{"class":"col s12 info-background margin-bottom"}}," ",{"t":7,"e":"div","a":{"class":"card-content"},"f":[{"t":7,"e":"p","f":["Our group aim at teaching the essence & art of Capoeira, its philosophy and respect. It is an enriching mix of music, dance, martial arts and Afro-Brazilian culture. Some people say Capoeira is a dance with an element of fight, some say that it is a fight with an element of dance. ",{"t":7,"e":"span","a":{"class":"block margin-top text-align-right"},"f":[{"t":7,"e":"i","f":["”Capoeira e tudo o que a boca come!” – Mestre Pastinha"]}]}]}]}]}]}," ",{"t":7,"e":"news"}]}]}]}]}]};
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _component_helpers = __webpack_require__(2);
-
-	var _newsRactive = __webpack_require__(13);
-
-	var _newsRactive2 = _interopRequireDefault(_newsRactive);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	(0, _component_helpers.create_component)('news', {
-					template: _newsRactive2.default,
-					oninit: function oninit() {
-									console.log('config', app.get('config'));
-									FB.api('/capoeira.bristol/feed?access_token=' + app.get('config.FB_SECRET_KEY'), function (response) {
-													if (response && !response.error) {
-																	console.log(response);
-																	app.set('news_feed', response.data);
-													}
-													if (response && response.error) {
-																	console.log('error', response);
-													}
-									});
-					},
-					oncomplete: function oncomplete() {}
-	});
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"col l6 m12 s12"},"f":[{"t":7,"e":"div","a":{"class":"card green-darker padding"},"f":[{"t":7,"e":"div","a":{"class":"card-title"},"f":[{"t":7,"e":"h5","f":["What's going on"]}]}," ",{"t":7,"e":"div","a":{"class":"card-content secondary"},"f":[{"t":7,"e":"ul","a":{"class":"collection"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":8,"r":"news_item"}],"n":52,"r":"app.news_feed"}],"n":50,"r":"app.news_feed"}]}]}]}]}],"p":{"news_item":[{"t":7,"e":"li","a":{"class":"collection-item avatar"},"f":[{"t":7,"e":"img","a":{"src":"images/yuna.jpg","alt":"","class":"circle"}}," ",{"t":7,"e":"span","a":{"class":"title"},"f":[{"t":2,"r":".story"}]}," ",{"t":7,"e":"p","f":[{"t":2,"r":".message"}]}]}]}};
+	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"home row no-margin-bottom"},"f":[{"t":7,"e":"div","a":{"class":"col s8 offset-s2 margin-top-double"},"f":[{"t":7,"e":"div","a":{"class":"row logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/logo_small.png"}}," ",{"t":7,"e":"div","f":[{"t":7,"e":"span","f":["School of"]}," ",{"t":7,"e":"p","f":["apoeria"]}]}]}]}]}," ",{"t":7,"e":"div","a":{"class":"nav-wrapper-custom"},"f":[{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"no-margin"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["About Us"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Our Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Contact"]}]}]}]}]};
 
 /***/ })
 /******/ ]);
