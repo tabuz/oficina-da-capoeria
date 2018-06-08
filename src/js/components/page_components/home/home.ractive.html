@@ -1,4 +1,4 @@
-<div class="home row no-margin-bottom">
+<div class="home row">
     <div class="col s8 offset-s2 margin-top-double">
         <div class="row logo">
             <img src="/assets/img/logo_small.png"/>
@@ -6,6 +6,18 @@
                 <span>School of</span>
                 <p>apoeria</p>
             </div>
+        </div>
+        <div class="slider">
+            <ul class="slides">
+                {{#each home_slides}}
+                    <li>
+                        <div class="caption left-align">
+                            <h2>{{{.text}}}</h2>
+                            <h5 class="light grey-text text-lighten-3">{{{.subline}}}</h5>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
         </div>
     </div>
 </div>
@@ -17,4 +29,52 @@
         <li><a href="#">History</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
+</div>
+<div class="row">
+    <div class="col s8 offset-s2 black-text" style="margin-top: 250px;">
+        <h1 class="black-text margin-bottom">About group<br/>& Capoeira</h1>
+        <p class="margin-left">Although there are few official history records, it is known 
+            that Capoeira was created nearly
+            500 years ago in Brazil by African slaves (mainly from Angola). Taken from their homes against
+            their will and kept in slavery, they started inventing fighting techniques for self-defense.
+            To cover their inside combats from their prisoners, the African slaves used their traditional
+            music, singing and dancing. Thus, the Capoeira continued its development and soon became not only
+            for self-defense but for rebellion.
+        </p>
+        <div class="row" style="margin-top: 100px;">
+            <div class="col s4 home-container --yellow">
+                <i class="material-icons">all_inclusive</i>
+                <h4>Dance</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.
+                     Ut enim ad minim veniam</p>
+                <button class="btn">More</button>
+            </div>
+            <div class="col s4 home-container --green">
+                <i class="material-icons">music_note</i>
+                <h4>music</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur 
+                        adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua.
+                         Ut enim ad minim veniam</p>
+                <button class="btn">More</button>
+            </div>
+            <div class="col s4 home-container --greener">
+                <i class="material-icons">directions_run</i>
+                <h4>ACROBATICS</H4>
+                <p>Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam</p>  
+                <button class="btn">More</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row green" style="margin-top: 100px;">
+    <div class="col s8 offset-s2 text-right" style="margin-top: 250px; margin-bottom: 250px;">
+        <h1 class="">BEGINNERS<br/>CAPOEIRA COURSE</h1>
+        <button class="btn">Join now</button>
+    </div>
 </div>

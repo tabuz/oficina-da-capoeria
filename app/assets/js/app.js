@@ -262,15 +262,31 @@
 
 	(0, _component_helpers.create_component)('home', {
 	    template: _homeRactive2.default,
+	    data: {
+	        home_slides: [{
+	            text: '<b>Where can I</b>',
+	            subline: '<b>learn Capoeira?</b>'
+	        }, {
+	            text: '<b>History and</b>',
+	            subline: '<b>culture of Capoeira</b>'
+	        }, {
+	            text: '<b>Free</b>',
+	            subline: '<b>introductory classes</b>'
+	        }]
+	    },
 	    oninit: function oninit() {},
-	    oncomplete: function oncomplete() {}
+	    onrender: function onrender() {},
+	    oncomplete: function oncomplete() {
+	        $('.slider').slider();
+	        $('.slider').slider('next');
+	    }
 	});
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"home row no-margin-bottom"},"f":[{"t":7,"e":"div","a":{"class":"col s8 offset-s2 margin-top-double"},"f":[{"t":7,"e":"div","a":{"class":"row logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/logo_small.png"}}," ",{"t":7,"e":"div","f":[{"t":7,"e":"span","f":["School of"]}," ",{"t":7,"e":"p","f":["apoeria"]}]}]}]}]}," ",{"t":7,"e":"div","a":{"class":"nav-wrapper-custom"},"f":[{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"no-margin"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["About Us"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Our Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Contact"]}]}]}]}]};
+	module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"home row"},"f":[{"t":7,"e":"div","a":{"class":"col s8 offset-s2 margin-top-double"},"f":[{"t":7,"e":"div","a":{"class":"row logo"},"f":[{"t":7,"e":"img","a":{"src":"/assets/img/logo_small.png"}}," ",{"t":7,"e":"div","f":[{"t":7,"e":"span","f":["School of"]}," ",{"t":7,"e":"p","f":["apoeria"]}]}]}," ",{"t":7,"e":"div","a":{"class":"slider"},"f":[{"t":7,"e":"ul","a":{"class":"slides"},"f":[{"t":4,"f":[{"t":7,"e":"li","f":[{"t":7,"e":"div","a":{"class":"caption left-align"},"f":[{"t":7,"e":"h2","f":[{"t":3,"r":".text"}]}," ",{"t":7,"e":"h5","a":{"class":"light grey-text text-lighten-3"},"f":[{"t":3,"r":".subline"}]}]}]}],"n":52,"r":"home_slides"}]}]}]}]}," ",{"t":7,"e":"div","a":{"class":"nav-wrapper-custom"},"f":[{"t":7,"e":"ul","a":{"id":"nav-mobile","class":"no-margin"},"f":[{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Home"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["About Us"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Our Gallery"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["History"]}]}," ",{"t":7,"e":"li","f":[{"t":7,"e":"a","a":{"href":"#"},"f":["Contact"]}]}]}]}," ",{"t":7,"e":"div","a":{"class":"row"},"f":[{"t":7,"e":"div","a":{"class":"col s8 offset-s2 black-text","style":"margin-top: 250px;"},"f":[{"t":7,"e":"h1","a":{"class":"black-text margin-bottom"},"f":["About group",{"t":7,"e":"br"},"& Capoeira"]}," ",{"t":7,"e":"p","a":{"class":"margin-left"},"f":["Although there are few official history records, it is known that Capoeira was created nearly 500 years ago in Brazil by African slaves (mainly from Angola). Taken from their homes against their will and kept in slavery, they started inventing fighting techniques for self-defense. To cover their inside combats from their prisoners, the African slaves used their traditional music, singing and dancing. Thus, the Capoeira continued its development and soon became not only for self-defense but for rebellion."]}," ",{"t":7,"e":"div","a":{"class":"row","style":"margin-top: 100px;"},"f":[{"t":7,"e":"div","a":{"class":"col s4 home-container --yellow"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["all_inclusive"]}," ",{"t":7,"e":"h4","f":["Dance"]}," ",{"t":7,"e":"p","f":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"]}," ",{"t":7,"e":"button","a":{"class":"btn"},"f":["More"]}]}," ",{"t":7,"e":"div","a":{"class":"col s4 home-container --green"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["music_note"]}," ",{"t":7,"e":"h4","f":["music"]}," ",{"t":7,"e":"p","f":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"]}," ",{"t":7,"e":"button","a":{"class":"btn"},"f":["More"]}]}," ",{"t":7,"e":"div","a":{"class":"col s4 home-container --greener"},"f":[{"t":7,"e":"i","a":{"class":"material-icons"},"f":["directions_run"]}," ",{"t":7,"e":"h4","f":["ACROBATICS"]}," ",{"t":7,"e":"p","f":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"]}," ",{"t":7,"e":"button","a":{"class":"btn"},"f":["More"]}]}]}]}]}," ",{"t":7,"e":"div","a":{"class":"row green","style":"margin-top: 100px;"},"f":[{"t":7,"e":"div","a":{"class":"col s8 offset-s2 text-right","style":"margin-top: 250px; margin-bottom: 250px;"},"f":[{"t":7,"e":"h1","a":{"class":""},"f":["BEGINNERS",{"t":7,"e":"br"},"CAPOEIRA COURSE"]}," ",{"t":7,"e":"button","a":{"class":"btn"},"f":["Join now"]}]}]}]};
 
 /***/ })
 /******/ ]);
