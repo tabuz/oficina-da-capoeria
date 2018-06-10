@@ -6,16 +6,16 @@ create_component('home', {
     data: {
         home_slides: [
             {
-                text: '<b>Where can I</b>',
-                subline: '<b>learn Capoeira?</b>',
+                text: 'Where can I',
+                subline: 'learn Capoeira?',
             },
             {
-                text: '<b>History and</b>',
-                subline: '<b>culture of Capoeira</b>',
+                text: 'History and culture',
+                subline: 'of Brazilian Capoeira',
             },
             {
-                text: '<b>Free</b>',
-                subline: '<b>introductory classes</b>',
+                text: 'Free',
+                subline: 'introductory classes',
             }
         ]
     },

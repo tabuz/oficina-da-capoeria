@@ -1,10 +1,24 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Gallery</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 <div class="home row">
     <div class="col s8 offset-s2 margin-top-double">
         <div class="row logo">
             <img src="/assets/img/logo_small.png"/>
             <div>
                 <span>School of</span>
-                <p>apoeria</p>
+                <p>Capoeria</p>
             </div>
         </div>
         <div class="slider">
@@ -12,8 +26,13 @@
                 {{#each home_slides}}
                     <li>
                         <div class="caption left-align">
-                            <h2>{{{.text}}}</h2>
-                            <h5 class="light grey-text text-lighten-3">{{{.subline}}}</h5>
+                            <span class="black-deco">
+                                <h2>{{{.text}}}</h2>
+                            </span>
+                            <br/>
+                            <span class="yellow-deco rigth-align">
+                                <h5 class="light grey-text text-lighten-3">{{{.subline}}}</h5>
+                            </span>
                         </div>
                     </li>
                 {{/each}}
@@ -23,16 +42,17 @@
 </div>
 <div class="nav-wrapper-custom">
     <ul id="nav-mobile" class="no-margin">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Gallery</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Contact</a></li>
+        <a href="#"><li>Home</li></a>
+        <a href="#"><li>About Us</li></a>
+        <a href="#"><li>Our Gallery</li></a>
+        <a href="#"><li>History</li></a>
+        <a href="#"><li>Contact</li></a>
     </ul>
 </div>
 <div class="row">
     <div class="col s8 offset-s2 black-text" style="margin-top: 250px;">
-        <h1 class="black-text margin-bottom">About group<br/>& Capoeira</h1>
+        <h1 class="black-text margin-bottom--big">About group<br/>& Capoeira</h1>
+        <div class="row group-banner z-depth-5 margin-bottom--big" style="height: 300px;"></div>
         <p class="margin-left">Although there are few official history records, it is known 
             that Capoeira was created nearly
             500 years ago in Brazil by African slaves (mainly from Angola). Taken from their homes against
@@ -72,9 +92,66 @@
         </div>
     </div>
 </div>
-<div class="row green" style="margin-top: 100px;">
-    <div class="col s8 offset-s2 text-right" style="margin-top: 250px; margin-bottom: 250px;">
-        <h1 class="">BEGINNERS<br/>CAPOEIRA COURSE</h1>
-        <button class="btn">Join now</button>
+<div class="row banner" style="margin-top: 100px;">
+    <div class="col s8 offset-s2 text-right" style="margin-top: 200px; margin-bottom: 200px;">
+        <h1>
+            <span class="background-semi-black">BEGINNERS</span>
+        </h1>
+        <h1 style="transform: translateX(-16px);">
+            <span class="background-semi-black">CAPOEIRA COURSE</span>
+        </h1>
+        <div class="row center-align margin-top">
+            <button class="btn join-button">Join now</button>
+        </div>
+    </div>
+</div>
+<div class="row info">
+    <div class="col s8 offset-s2">
+        <div class="row">
+            <div class="col s4 black z-depth-5 round-corner">
+                <img class="img-responsive padding" src="/assets/img/oficina_white_yellow.png">
+            </div>
+            <div class="col s8 padding black-text">
+                <p>
+                    Lorem ipsum dolor sit amet, vel tantas doming denique an, purto mundi sadipscing
+                     sea te. Quod solum delicata quo ei, est in aeterno molestiae percipitur. Populo
+                      laoreet scaevola per at, mel vocibus admodum volutpat ei. Id saperet accumsan 
+                    eleifend eum, graecis definiebas quo eu. Vis summo petentium ei. Cu iusto tamquam 
+                    torquatos pro.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col s8 offset-s2 margin-top">
+        <div class="row">
+            <div class="col s9 black-text padding">
+                <p class="rigth-align">
+                    Lorem ipsum dolor sit amet, vel tantas doming denique an, purto mundi sadipscing
+                        sea te. Quod solum delicata quo ei, est in aeterno molestiae percipitur. Populo
+                        laoreet scaevola per at, mel vocibus admodum volutpat ei. Id saperet accumsan 
+                    eleifend eum, graecis definiebas quo eu. Vis summo petentium ei. Cu iusto tamquam 
+            torquatos pro.
+                </p>
+            </div>
+            <div class="col s3">
+                <img class="img-responsive padding" src="/assets/img/jump-bg.png">
+            </div>            
+        </div>
+    </div>
+    <div class="col s8 offset-s2 margin-top">
+        <div class="row">
+            <div class="col s3">
+                <img class="img-responsive padding" src="/assets/img/kick-bg.png">
+            </div>  
+            <div class="col s9 black-text padding">
+                <p>
+                    Lorem ipsum dolor sit amet, vel tantas doming denique an, purto mundi sadipscing
+                        sea te. Quod solum delicata quo ei, est in aeterno molestiae percipitur. Populo
+                        laoreet scaevola per at, mel vocibus admodum volutpat ei. Id saperet accumsan 
+                    eleifend eum, graecis definiebas quo eu. Vis summo petentium ei. Cu iusto tamquam 
+            torquatos pro.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
