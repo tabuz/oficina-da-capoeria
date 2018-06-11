@@ -7,6 +7,7 @@ import {
 import {create_router} from './routing.js';
 
 import './components/page_components/home/home.js';
+import './components/page_components/navi/navi.js';
 
 export let router;
 
